@@ -9,8 +9,12 @@ import java.util.UUID
 @Table(name = "user_details")
 data class User (
     @Id private val id: UUID,
-    @OneToMany
-    @JoinColumn(name="address_id", referencedColumnName = "Id")
+    @Column(name="first_name")
+    private var firstName:String,
+    @Column(name="last_name")
+    private var lastName:String,
+    private var phone:String,
+    @OneToMany(mappedBy = "user")
     private val account:List<Account> = mutableListOf(),
     @OneToMany(mappedBy = "user")
     private val transactions: List<Transaction> = mutableListOf()

@@ -23,6 +23,7 @@ data class Category (
     @Column(name="image_url")
     private var imageUrl:String,
     private var type:String,
+    private var title:String,
     @ManyToMany(mappedBy = "categories")
     @JsonIgnoreProperties("categories")
     private var transactions:List<Transaction> = mutableListOf()

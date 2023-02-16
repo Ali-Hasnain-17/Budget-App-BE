@@ -11,6 +11,8 @@ spring:
     show-sql: 'true'
     hibernate:
       ddl-auto: update
+  liquibase:
+    enabled: false
   servlet:
     multipart:
       max-request-size: 100MB

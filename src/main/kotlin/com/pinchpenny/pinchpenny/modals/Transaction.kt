@@ -23,5 +23,8 @@ data class Transaction(
     private val categories:List<Category>,
     @ManyToOne
     @JoinColumn(name="user_id", referencedColumnName = "id")
-    private val user:User
+    private val user:User,
+    @ManyToOne
+    @JoinColumn(name="account_id", referencedColumnName = "id")
+    private val account:Account
 )
