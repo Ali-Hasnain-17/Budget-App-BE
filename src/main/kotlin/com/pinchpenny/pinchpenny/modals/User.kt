@@ -8,14 +8,15 @@ import java.util.UUID
 @Builder
 @Table(name = "user_details")
 data class User (
-    @Id private val id: UUID,
-    @Column(name="first_name")
-    private var firstName:String,
-    @Column(name="last_name")
-    private var lastName:String,
-    private var phone:String,
-    @OneToMany(mappedBy = "user")
-    private val account:List<Account> = mutableListOf(),
+    @Id @GeneratedValue(strategy = GenerationType.AUTO) val id: UUID? = null,
+    val firstName: String,
+    val lastName: String,
+    val email: String,
+    val password: String,
+    val role: String,
+    @OneToMany
+    @JoinColumn(name="address_id", referencedColumnName = "Id")
+    val account:List<Account> = mutableListOf(),
     @OneToMany(mappedBy = "user")
     private val transactions: List<Transaction> = mutableListOf()
 ) {
