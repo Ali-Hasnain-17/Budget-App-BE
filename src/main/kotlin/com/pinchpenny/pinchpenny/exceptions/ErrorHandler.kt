@@ -12,9 +12,9 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 @ControllerAdvice
 @ResponseStatus
 class ErrorHandler: ResponseEntityExceptionHandler() {
-    @ExceptionHandler(NotFoundException::class)
+    @ExceptionHandler(com.pinchpenny.pinchpenny.exceptions.NotFoundException::class)
     fun notFoundExceptionHandler(
-        exception: NotFoundException,
+        exception: com.pinchpenny.pinchpenny.exceptions.NotFoundException,
         request: WebRequest
     ): ResponseEntity<ErrorMessage> {
         val errorMessage = ErrorMessage(HttpStatus.NOT_FOUND, exception.message.toString())

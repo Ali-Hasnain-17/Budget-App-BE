@@ -10,11 +10,14 @@ import java.util.*
 @Builder
 data class Account(
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private val Id: UUID,
-    private var balance: Long,
-    private var type: String,
-    @OneToMany
-    @JoinColumn(name="transaction_id", referencedColumnName = "id")
+    private val id:UUID,
+    private var balance:Double,
+    private var type:String,
+    @OneToMany(mappedBy = "account")
     private val transactions:List<Transaction> = mutableListOf(),
+    @ManyToOne
+    @JoinColumn(name="user_id", referencedColumnName = "id")
+    private val user: User
 )

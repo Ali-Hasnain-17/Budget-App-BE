@@ -2,7 +2,6 @@ package com.pinchpenny.pinchpenny.modals
 
 import jakarta.persistence.*
 import lombok.Builder
-import lombok.Data
 import java.util.UUID
 
 @Entity
@@ -19,7 +18,7 @@ data class User (
     @JoinColumn(name="address_id", referencedColumnName = "Id")
     val account:List<Account> = mutableListOf(),
     @OneToMany(mappedBy = "user")
-    val transactions: List<Transaction> = mutableListOf()
+    private val transactions: List<Transaction> = mutableListOf()
 ) {
 
 }

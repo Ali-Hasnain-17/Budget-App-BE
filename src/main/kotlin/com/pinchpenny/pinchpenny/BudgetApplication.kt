@@ -8,5 +8,5 @@ import org.springframework.context.annotation.ComponentScan
 class BudgetApplication
 
 fun main(args: Array<String>) {
-	runApplication<BudgetApplication>(*args)
+	runApplication<com.pinchpenny.pinchpenny.BudgetApplication>(*args)
 }

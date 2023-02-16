@@ -1,5 +1,6 @@
 package com.pinchpenny.pinchpenny.services
 
+import com.pinchpenny.pinchpenny.services.base.UserService
 import com.pinchpenny.pinchpenny.dtos.AuthRequestDTO
 import com.pinchpenny.pinchpenny.dtos.AuthResponseDTO
 import com.pinchpenny.pinchpenny.dtos.RegisterRequestDTO
