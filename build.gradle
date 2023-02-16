@@ -6,7 +6,7 @@ plugins {
 	id 'org.jetbrains.kotlin.jvm' version '1.7.22'
 	id 'org.jetbrains.kotlin.plugin.spring' version '1.7.22'
 	id 'org.jetbrains.kotlin.plugin.jpa' version '1.7.22'
-	id 'org.liquibase.gradle' version '2.0.4'
+//	id 'org.liquibase.gradle' version '2.0.4'
 }
 
 group = 'com.pinchpenny'
@@ -16,9 +16,9 @@ sourceCompatibility = '17'
 repositories {
 	mavenCentral()
 }
-configurations {
-	liquibaseRuntime.extendsFrom runtimeClasspath
-}
+//configurations {
+//	liquibaseRuntime.extendsFrom runtimeClasspath
+//}
 
 
 dependencies {
@@ -33,8 +33,8 @@ dependencies {
 	implementation 'io.jsonwebtoken:jjwt-api:0.11.5'
 	implementation 'io.jsonwebtoken:jjwt-jackson:0.11.5'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	implementation  'org.liquibase:liquibase-core'
-	liquibaseRuntime sourceSets.main.output
+//	implementation  'org.liquibase:liquibase-core'
+//	liquibaseRuntime sourceSets.main.output
 	runtimeOnly 'org.postgresql:postgresql'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
