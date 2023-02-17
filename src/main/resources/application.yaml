@@ -1,7 +1,7 @@
 spring:
   datasource:
     username: ${db_user}
-    url: ${db_url}
+    url: jdbc:postgresql://${DB_HOST}:${DB_PORT}/${DB_DATABASE}
     password: ${db_password}
   jpa:
     properties:
