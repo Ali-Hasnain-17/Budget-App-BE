@@ -48,6 +48,7 @@ jar {
 		attributes(
 				'Main-Class': 'com.pinchpenny.pinchpenny.BudgetApplicationKt'
 		)
+		from { configurations.compileClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
 	}
 }
 
