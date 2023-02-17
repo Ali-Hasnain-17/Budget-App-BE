@@ -1,8 +1,8 @@
 spring:
   datasource:
-    username: postgres
-    url: jdbc:postgresql://localhost:5432/budget_app
-    password: password
+    username: ${db_user}
+    url: ${db_url}
+    password: ${db_password}
   jpa:
     properties:
       hibernate:
@@ -17,3 +17,5 @@ spring:
     multipart:
       max-request-size: 100MB
       max-file-size: 100MB
+jwt:
+  secret: ${jwt_secret}
