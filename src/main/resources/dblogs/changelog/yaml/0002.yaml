@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0002
+      author: Ali Hasnain
+      changes:
+        - sqlFile:
+            path: dblogs/changelog/changes/0002.sql

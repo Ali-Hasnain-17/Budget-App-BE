@@ -1,0 +1,5 @@
+databaseChangeLog:
+        - include:
+                file: dblogs/changelog/yaml/0001.yaml
+        - include:
+                  file: dblogs/changelog/yaml/0002.yaml

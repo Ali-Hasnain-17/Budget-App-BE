@@ -15,14 +15,13 @@ fun AccountCreateRequest.toEntity(user:User) = Account(
     user = user
 )
 data class AccountUpdateRequest(
-    val id:UUID,
-    val balance:Double,
-    val type:String,
-    val user_id:UUID,
+    val balance: Double?,
+    val type: String?,
+    val user_id: UUID
 )
 fun AccountUpdateRequest.toEntity(user:User) = Account(
-    balance = balance,
-    type = type,
+    balance = balance!!,
+    type = type!!,
     user = user
 )
 data class  AccountDeleteRequest(
