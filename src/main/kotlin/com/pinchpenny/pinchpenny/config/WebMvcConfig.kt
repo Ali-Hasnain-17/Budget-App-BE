@@ -17,7 +17,5 @@ class WebMvcConfig : WebMvcConfigurer {
             .allowedHeaders("*")
             .maxAge(3600)
     }
-    @Bean
-    fun modelMapper():ModelMapper = ModelMapper()
 
 }

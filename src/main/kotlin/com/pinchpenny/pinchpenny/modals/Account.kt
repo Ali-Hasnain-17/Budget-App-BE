@@ -11,13 +11,12 @@ import java.util.*
 data class Account(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id")
-    private val id:UUID?=null,
-    private var balance:Double,
-    private var type:String,
+    @Column(name = "id") val id:UUID?=null,
+    var balance: Double = 0.0,
+    var type: String,
     @OneToMany(mappedBy = "account")
     private val transactions:List<Transaction> = mutableListOf(),
-    @ManyToOne(cascade = [CascadeType.ALL])
+    @ManyToOne
     @JoinColumn(name="user_id", referencedColumnName = "id")
     private val user: User
 )

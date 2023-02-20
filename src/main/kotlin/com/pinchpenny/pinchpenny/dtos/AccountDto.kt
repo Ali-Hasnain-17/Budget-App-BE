@@ -35,8 +35,7 @@ data class AccountResponse(
     val user_id: UUID?,
     val userEmail:String,
     val userName:String,
-
-){
+)
 fun Account.toModel(user:User) = AccountResponse(
     user_id = user.id,
     balance = balance,
@@ -44,4 +43,4 @@ fun Account.toModel(user:User) = AccountResponse(
     userEmail = user.email,
     userName = user.firstName + " " + user.lastName
 )
-}
+
