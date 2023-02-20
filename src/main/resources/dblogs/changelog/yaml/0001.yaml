@@ -4,4 +4,4 @@ databaseChangeLog:
       author: Hamza Raza
       changes:
         - sqlFile:
-            path: db/changelog/changes/0001.sql
+            path: dblogs/changelog/changes/0001.sql

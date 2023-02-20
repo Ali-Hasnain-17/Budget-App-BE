@@ -1,5 +1,6 @@
 package com.pinchpenny.pinchpenny.exceptions
 
+import com.pinchpenny.pinchpenny.dtos.Response
 import com.pinchpenny.pinchpenny.modals.ErrorMessage
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -16,8 +17,8 @@ class ErrorHandler: ResponseEntityExceptionHandler() {
     fun notFoundExceptionHandler(
         exception: com.pinchpenny.pinchpenny.exceptions.NotFoundException,
         request: WebRequest
-    ): ResponseEntity<ErrorMessage> {
+    ): ResponseEntity<Response<String>> {
         val errorMessage = ErrorMessage(HttpStatus.NOT_FOUND, exception.message.toString())
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(errorMessage)
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(Response<String>(errorMessage.status, errorMessage.message, null))
     }
 }
