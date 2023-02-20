@@ -13,9 +13,9 @@ import java.util.UUID
 data class Transaction(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private val id: UUID?,
-    private var date: Date,
-    private var amount: Long,
+    private val id: UUID? = null,
+    var date: Date,
+    var amount: Double,
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.LAZY)
     @JoinTable(name = "category_transaction_bridge",
         joinColumns = [JoinColumn(name = "transaction_id", referencedColumnName = "id")],
@@ -24,8 +24,8 @@ data class Transaction(
     private val categories: List<Category>,
     @ManyToOne
     @JoinColumn(name="user_id", referencedColumnName = "id")
-    private val user:User,
+    private val user: User,
     @ManyToOne
     @JoinColumn(name="account_id", referencedColumnName = "id")
-    private val account:Account
+    private val account: Account
 )

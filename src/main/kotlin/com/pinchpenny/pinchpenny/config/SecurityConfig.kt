@@ -37,7 +37,7 @@ class SecurityConfig() {
             .csrf()
             .disable()
             .authorizeHttpRequests()
-            .requestMatchers("/welcome", "/api/user/register", "/api/user/authenticate")
+            .requestMatchers("/welcome", "/api/user/register", "/api/user/authenticate", "/api/account/**")
             .permitAll()
             .and()
             .authorizeHttpRequests()
