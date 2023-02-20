@@ -18,9 +18,9 @@ import java.util.UUID
 data class Category (
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private val id: UUID? = null,
+    private val id:Long? = null,
     @Column(name = "main_id")
-    private var mainId: UUID,
+    private var mainId:Long?,
     @Column(name="image_url")
     private var imageUrl: String,
     private var type: String,
@@ -28,5 +28,4 @@ data class Category (
     @ManyToMany(mappedBy = "categories")
     @JsonIgnoreProperties("categories")
     private var transactions:List<Transaction> = mutableListOf()
-
 )

@@ -17,7 +17,12 @@ fun CategoryCreateRequest.toEntity() = Category(
     title = title,
     type = type
 )
-
+fun CategoryCreateRequest.toEntity() = Category(
+    title = title,
+    mainId = mainId!!,
+    imageUrl = imageUrl,
+    type = type
+)
 data class CategoryUpdateRequest(
     val id: UUID?,
     val title: String?,
@@ -33,6 +38,13 @@ fun CategoryUpdateRequest.toEntity() = Category(
     title = title!!,
     type = type!!
 )
+fun CategoryUpdateRequest.toEntity() = Category(
+    id = id,
+    title = title!!,
+    mainId = mainId!!,
+    imageUrl = imageUrl!!,
+    type = type!!
+)
 
 data class  CategoryDeleteRequest(
     val id:Long
@@ -45,9 +57,9 @@ data class CategoryResponse(
     val type:String,
 )
 
-fun CategoryResponse.toModel() = Category(
-    mainId = mainId,
-    imageUrl = imageUrl,
-    title = title,
-    type = type
+fun CategoryResponse.toModel() = CategoryResponse(
+    title = title!!,
+    mainId = mainId!!,
+    imageUrl = imageUrl!!,
+    type = type!!
 )
