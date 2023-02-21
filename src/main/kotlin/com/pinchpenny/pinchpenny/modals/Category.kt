@@ -15,17 +15,17 @@ import java.util.UUID
 @Entity
 @Data
 @Builder
-data class Category (
+data class Category(
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private val id:UUID? = null,
+    val id: UUID? = null,
     @Column(name = "main_id")
-    private var mainId:UUID?,
-    @Column(name="image_url")
-    private var imageUrl: String,
-    private var type: String,
-    private var title: String,
+    var mainId: UUID,
+    @Column(name = "image_url")
+    var imageUrl: String,
+    var type: String,
+    var title: String,
     @ManyToMany(mappedBy = "categories")
     @JsonIgnoreProperties("categories")
-    private var transactions:List<Transaction> = mutableListOf()
+    var transactions: List<Transaction> = mutableListOf()
 )

@@ -14,8 +14,7 @@ data class User (
     val email: String,
     val password: String,
     val role: String,
-    @OneToMany
-    @JoinColumn(name="address_id", referencedColumnName = "Id")
+    @OneToMany(mappedBy = "user")
     val account:List<Account> = mutableListOf(),
     @OneToMany(mappedBy = "user")
     private val transactions: List<Transaction> = mutableListOf()
