@@ -7,7 +7,6 @@ import java.util.UUID
 data class AccountCreateRequest(
     val balance:Double,
     val type:String,
-    val user_id: UUID
 )
 fun AccountCreateRequest.toEntity(user:User) = Account(
     balance = balance,
@@ -16,16 +15,13 @@ fun AccountCreateRequest.toEntity(user:User) = Account(
 )
 data class AccountUpdateRequest(
     val balance: Double?,
-    val type: String?,
-    val user_id: UUID
+    val type: String?
 )
+
 fun AccountUpdateRequest.toEntity(user:User) = Account(
     balance = balance!!,
     type = type!!,
     user = user
-)
-data class  AccountDeleteRequest(
-    val id:UUID
 )
 
 data class AccountResponse(
