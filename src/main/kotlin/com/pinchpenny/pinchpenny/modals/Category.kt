@@ -28,5 +28,4 @@ data class Category (
     @ManyToMany(mappedBy = "categories")
     @JsonIgnoreProperties("categories")
     private var transactions:List<Transaction> = mutableListOf()
-
 )

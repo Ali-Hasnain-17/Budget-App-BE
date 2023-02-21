@@ -50,6 +50,4 @@ class AccountServiceImpl: AccountService {
         val user: com.pinchpenny.pinchpenny.modals.User = userUtils.getCurrentLoggedInUser()
         return account.map { it.toModel(user) }
     }
-
-
 }

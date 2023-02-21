@@ -15,8 +15,9 @@ fun AccountCreateRequest.toEntity(user:User) = Account(
 )
 data class AccountUpdateRequest(
     val balance: Double?,
-    val type: String?,
+    val type: String?
 )
+
 fun AccountUpdateRequest.toEntity(user:User) = Account(
     balance = balance!!,
     type = type!!,
