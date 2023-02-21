@@ -18,9 +18,9 @@ import java.util.UUID
 data class Category (
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private val id:Long? = null,
+    private val id: UUID? = null,
     @Column(name = "main_id")
-    private var mainId:Long?,
+    private var mainId: UUID,
     @Column(name="image_url")
     private var imageUrl: String,
     private var type: String,
