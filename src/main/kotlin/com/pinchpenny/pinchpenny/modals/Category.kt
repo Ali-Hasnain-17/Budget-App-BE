@@ -1,12 +1,7 @@
 package com.pinchpenny.pinchpenny.modals
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties
-import jakarta.persistence.Column
-import jakarta.persistence.Entity
-import jakarta.persistence.GeneratedValue
-import jakarta.persistence.GenerationType
-import jakarta.persistence.Id
-import jakarta.persistence.ManyToMany
+import jakarta.persistence.*
 import lombok.Builder
 import lombok.Data
 import java.util.UUID
@@ -18,15 +13,13 @@ import java.util.UUID
 data class Category (
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private val id: UUID? = null,
-    @Column(name = "main_id")
-    private var mainId: UUID,
-    @Column(name="image_url")
-    private var imageUrl: String,
-    private var type: String,
-    private var title: String,
+    var id: UUID? = null,
+    @Column(name =" image_url") var imageUrl: String,
+    @Enumerated(EnumType.STRING) var type: CategoryTypes,
+    var title: String,
+    @Column(name = "main_id") var parentId: UUID? = null,
     @ManyToMany(mappedBy = "categories")
     @JsonIgnoreProperties("categories")
-    private var transactions:List<Transaction> = mutableListOf()
-
+    private var transactions:List<Transaction> = mutableListOf(),
 )
+

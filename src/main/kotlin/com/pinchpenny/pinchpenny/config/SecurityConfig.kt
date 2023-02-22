@@ -41,7 +41,7 @@ class SecurityConfig() {
             .permitAll()
             .and()
             .authorizeHttpRequests()
-            .requestMatchers("/api/user/**", "/api/account/**", "/welcome",)
+            .requestMatchers("/api/user/**", "/api/account/**", "/api/category/**",)
             .authenticated()
             .and()
             .sessionManagement()
