@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - changeSet:
+      id: 0003
+      author: Hamza Raza
+      changes:
+        - sqlFile:
+            path: dblogs/changelog/changes/0003.sql
