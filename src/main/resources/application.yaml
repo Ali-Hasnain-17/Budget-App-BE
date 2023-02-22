@@ -13,12 +13,11 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
-        format_sql: 'true'
-    show-sql: 'true'
+        format_sql: true
+    show-sql: true
   servlet:
     multipart:
       max-request-size: 100MB
       max-file-size: 100MB
 jwt:
   secret: ${JWT_SECRET}
-
